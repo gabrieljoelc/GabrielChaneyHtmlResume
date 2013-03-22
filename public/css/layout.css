@@ -130,6 +130,10 @@
 		header h1 {letter-spacing: 3px;}
 		header h2 {letter-spacing: 2px;}
 	
+	.social-icons { padding-top: 0; }
+		.social-icons a { margin-right: 0; }
+		.social-icons img {height: 16px; width: 16px; }
+	
 	#profile h3 { font-size: 11pt; width: 75%; }
 	
 	#skills section { position: relative; width: 33%; }
