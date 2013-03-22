@@ -94,22 +94,7 @@ textarea {
    ========================================================================== */
 
 
-/* BABY BEAR */
-article {
-background: #f5f5f5;
-padding: 0.809em;
-max-width: 30em;
-margin: auto;
-border: solid #666;
-border-width: 8px 0 2px 0;
-min-width: 10em;
-}
-
-
-
-
-
-   
+/* BABY BEAR */   
 body { font-family: Georgia, "Times New Roman" serif; color: #444; background: #f5f5f5; }
 h1, h2, h3, h4, h5 { color: #333; font-weight: normal; margin-top: 0; margin-bottom: 0;}
 p, ul {font-size: .857em; line-height: 1.5;}
@@ -118,57 +103,106 @@ a { color: #990003 }
 a:hover { text-decoration: none; }
 strong { font-weight: bold; }
 
-header { margin: 2.5em 0 2em 0; border-bottom: 1px solid #ccc; padding-bottom: 2em; }
+
+article {
+background: #f5f5f5;
+padding: 0 0.809em;
+max-width: 30em;
+margin: auto;
+border: solid #666;
+border-width: 8px 0 2px 0;
+min-width: 10em;
+}
+
+header { margin: 1.8em 0 1em 0; border-bottom: 1px solid #ccc; padding-bottom: 1.8em; }
 	header h1, header h2 { font-weight: normal; }
-	header h1 { font-size: 3em; letter-spacing: 3px; line-height: 1.1; text-transform: uppercase; }
-	header h2 { font-size: 1.25em; font-style: italic; text-transform: uppercase; letter-spacing: 2px; }
+	header h1 { font-size: 3em; letter-spacing: 4px; line-height: 1.1; text-transform: uppercase; }
+	header h2 { font-size: 1.25em; font-style: italic; text-transform: uppercase; letter-spacing: 2.98px; }
 	header li { list-style: none; }
 	header .name-and-title { float: left; }
 	header .contact-info { margin: 0; padding: 0; width: 17em; }
 
-footer { padding: 1em 0 5em 0; border-top: 1px solid #ccc; margin-bottom: 2em; text-align: center; }
+/*footer {
+border-top: 1px solid #ccc;
+margin-bottom: 2em;
+padding: 1em 0 5em 0;
+text-align: center;
+
+}*/
+
+
 footer p { margin-bottom: 0; text-align: center; }
 
-article > section { margin-bottom: 2em; padding-bottom: 2em; border-bottom: 1px solid #ccc; }
+article > section { margin-bottom: 1em; padding-bottom: 1em; }
 	article > section > h2:first-child { font-style: italic; font-weight: bold; }
 	article > section > .section-content { margin-top: 0; margin-bottom: 0; }
-article > section.last { border-bottom: none; }
-	
+
+section { border-bottom: 1px solid #ccc; }
+section.last { padding-bottom: 0; }
+
 #profile h3 { font-size: 1.3em; font-weight: normal; }
 
-#skills section { float: left; width: 15em; }
+#skills section { border: none; float: left; width: 15em; }
 	#skills section h2 { margin-bottom: .3em; }
-	#skills section h2 + p { /*height: auto; margin-bottom: auto; margin-top: 0;*/ margin: 0; padding-right: 3em; }
+	#skills section h2 + p { margin: 0; padding-right: 3em; }
 	#skills section.last h2 + p { padding-right: 0; }
 	
 #technical ul { float: left; margin: 0; padding: 0; }
-	#technical ul li { line-height: 1.8; border-bottom: 1px solid #ccc; list-style-type: none; width: 14em; padding-right: 3em; }
 	
-#experience section { position: relative; margin-bottom: 1em; padding-bottom: 1em; border-bottom: 1px solid #ccc; }
-	#experience section.last { border-bottom: none; }
+#experience section { position: relative; margin-bottom: 1em; padding-bottom: 1em; }
 	#experience section .location { font-style: italic; margin-bottom: .4em; }
 	#experience section .date-range { font-size: 1.05em; margin-bottom: .8em; }
 	#experience section h3 { clear: both; }
-	#experience section p, #experience section ul { clear: both; margin: 0.75em 0 1em 0; }
+	#experience section p, #experience section ul { clear: both; margin: 0.75em 0; }
 	#experience section ul {padding: 0; }
 		#experience section ul li { margin-left: 1.5em;}
+	#experience section.last { margin-bottom: 0; padding-bottom: 0; }
+		#experience section.last p { margin-bottom: 0; }
 
+#education.last { margin-bottom: 50px; }
+		
+/** sticky footer (http://www.cssreset.com/how-to-keep-footer-at-bottom-of-page-with-css/) *
+body {
+height: 100%;
+}
 
+article {
+position: relative;
+min-height: 100%;
+}
+article > section.last {
+padding-bottom: 80px;
+}
+footer {
+height: 50px;
+bottom: 0;
+position: absolute;
+padding:0;
+margin:0;
+width: 100%;
+}*/
 
-
-
-
-
-
-
-
-
-
+.social-icon {
+background-repeat: no-repeat;
+/* Data URI converter: http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/ */
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAABkCAYAAADnszKOAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAScQAAEnEB89x6jgAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTAw9HKhAAADlUlEQVRoQ+2avU7rQBCFeVreggQaWiSalNBBl0dIR0tLBTU0VHRA7ozDOLPHJ+vZeG1zJY70CXw8f4nXGwdxst1uZ4Wah7i7u9uenp5m0RjMy0FNZLlc0mY5NAfrMKhprFYrWrwErYF1PdRUWLEhYH2DmqxADbCP0jFYYk2wX3JQ45r3gWsiGYAljIHv2f5yzK12LP4WbQdggcZisdCERuz8MYj2A/TtcF9fX5rQ6PX1lcaUYjtm76tXzhZnGtyInT8WUWyAsQgP4MU81Pv7+/bq6iqpwRCNM4CpbwhRnQF8o8vLyx93906YzxDVGcDH9p3ziP4G2A3QtxF55bzIOSPZiBQWZHjlvMg5Q9T0bQfIfRh55bzIOYV+GCkseAx8z2SA2R9IFJZUE+yXHBgssQbYR+kYBiswBKxvUNOosSbwmiPURI55XvS3Wg5qHqJvx1Rsh4tCzSmh5pRQc0qoOSXUPMRsi3C223DWjYgVGwLWN6jJCtQA+ygdgyXWBPslB0Ov+fn5ee+XEVwTyQAsgbHZbCR8r8fHx6axieV4RN0BoreaNsup7x1Q/C3aDsACGab1et3xdDgfm0O0HyCywyn6JdQU8XPYjln06nWRmbx/c3Pz48YHUERlAygme7v9q/eXJYKofABtwhRZfIiofAAFVfrKDdGwAfr+BNOHaNgALy8vzcJkMRFE5QP4FY8qfUdEZQP4FX9IJUOIdgNENyKvknOMZCNSWBDiVXKOIWr6tgNEPox00ZlsASros1wP/TBSWDDiP3ZR0c1I1PZMBog+kLA7QT0Wi2QfSBSWVBPslxwYLLEG2EfpGAYrMASsb1DTGPqQquA1R6iJRJ8XPf5Wy0HNQ0R2TNvholBzSqg5JdScEmpOCTUPMdsinO02nHUjYsWGgPUNarICNcA+SsdgiTXBfslBjWveB66JZACWMAa+Z/tL5FYzsXMl+Fu0HYAFelAspgTRfoDIDodiMSXYjhl69QqKxZQi+o8HMH1/fzf/5uP/1ef29pbWQETDB1DhAB8fH7QGIqrzDqg+Pz+bn6rr62taAxH9LcJfMkBkI3p+ftaEjvTa6zqwtfD29kbzkWQjUlgQUiKW7xE1fdsBos99UbFc4+LiQkPSARQWzHh4eJBwrqenJ5rjEbU9kwFmfyBRWFJNsF9yYLDEGmAfpWMYrMAQsL5BTaPGmsBrjlATme2rGXJ/f0+beUb5cjoe25N/mnDETcY90J8AAAAASUVORK5CYII=);
+padding: 0 18px 16px 16px;
+}
+.linkedin {
+}
+.github {
+background-position-y: -34px;
+}
+.twitter {
+background-position-y: -68px;
+}
 
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-
+	.border-list li { line-height: 1.8; border-bottom: 1px solid #ccc; list-style-type: none; width: 14em; padding-right: 3em; }
+	.last, .border-list li.last { border-bottom: none; }
+	
 /*
  * Image replacement
  */

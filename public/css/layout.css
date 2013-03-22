@@ -1,14 +1,14 @@
 /* 8. CUSTOM LAYOUT & TYPOGRAPHY (Daddy bear)
 ----------------------------------------------------------------------------------------*/
 	article {
-	padding: 0 1.618em 1.618em 1.618em; /* padding: 1.618em; */
+	padding: 0;  /*padding: 1.618em; */
 	margin: 0 auto;
 	max-width: 60em; /* 60em; */
 	}
 	header .contact-info { float: right; }
 	article > section > h2 { float: left; width: 7em;}
 	article > section > .section-content { float: left; width: 45em; }
-	#profile h3 { width: 28em; }
+	#profile h3 { width: 35em; }
 	/*#skills section h2 + p { height: 11em; }*/
 	#experience section .date-range { float: right; bottom: -.2em; position: relative; }
 	#experience section .employer { float: left; }
@@ -121,15 +121,16 @@
 	max-width: 60em; /* 60em; */
 	border-bottom: none;
 	}	
-		article > section { margin-bottom: 15px; padding-bottom: 15px; }
+		article > section { margin-bottom: 8px; padding-bottom: 8px; }
 			article > section > h2 { width: 18%; }
 			article > section > .section-content { width: 81%; }
 	
 	header { margin-bottom: 15px; padding-bottom: 15px; }
 		header .name-and-title { margin-right: 15px; width: auto; }
+		header h1 {letter-spacing: 3px;}
+		header h2 {letter-spacing: 2px;}
 	
-	
-	#profile h3 { font-size: 11pt; width: 65%; }
+	#profile h3 { font-size: 11pt; width: 75%; }
 	
 	#skills section { position: relative; width: 33%; }
 		#skills section h2 + p { /*height: 130px; margin-bottom: 15px;*/ padding-right: 30px; }
@@ -138,4 +139,7 @@
 		#technical ul li { position: relative; padding-right: 30px;  }
 	
 	#experience section .date-range { font-size: 10pt; }
+	#experience .ncarb { padding-bottom: 50px; }
+	
+	footer { display: none; }
 }
