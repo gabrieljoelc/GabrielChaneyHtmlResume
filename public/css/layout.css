@@ -10,8 +10,9 @@
 	article > section > .section-content { float: left; width: 45em; }
 	#profile h3 { width: 35em; }
 	/*#skills section h2 + p { height: 11em; }*/
-	#experience section .date-range { float: right; bottom: -.2em; position: relative; }
-	#experience section .employer { float: left; }
+	
+	/*#experience section .date-range { float: right; bottom: -.2em; position: relative; }
+	#experience section .employer { float: left; }*/
 
 
 /* 9. CUSTOM LAYOUT & TYPOGRAPHY (Mummy bear)
@@ -130,9 +131,9 @@
 		header h1 {letter-spacing: 3px;}
 		header h2 {letter-spacing: 2px;}
 	
-	.social-icons { padding-top: 0; }
+	.social-icons { margin-top: 6px; padding-top: 0; }
 		.social-icons a { margin-right: 0; }
-		.social-icons img {height: 16px; width: 16px; }
+		.social-icons img {height: 18px; width: 18px; }
 	
 	#profile h3 { font-size: 11pt; width: 75%; }
 	

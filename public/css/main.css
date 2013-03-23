@@ -95,17 +95,32 @@ textarea {
 
 
 /* BABY BEAR */   
-body { font-family: Georgia, "Times New Roman" serif; color: #444; background: #f5f5f5; }
-h1, h2, h3, h4, h5 { color: #333; font-weight: normal; margin-top: 0; margin-bottom: 0;}
+body { font-family: Georgia, "Times New Roman" serif; /*color: #444; background: #f5f5f5;*/ }
+h1, h2, h3, h4, h5 { /*color: #333;*/ font-weight: normal; margin-top: 0; margin-bottom: 0;}
 p, ul {font-size: .857em; line-height: 1.5;}
 h2 { font-size: 1.3em; }
-a { color: #990003 }
-a:hover { text-decoration: none; }
+
+/* anchor and hover from http://retinart.net/ */
+a {
+color: #2c2c2c;
+text-decoration: none;
+border-bottom: #d88f8f 1px solid;
+transition: color 0.3s;
+-moz-transition: color 0.3s;
+-ms-transition: color 0.3s;
+-o-transition: color 0.3s;
+-webkit-transition: color 0.3s;
+}
+a:hover {
+border-bottom: #cac49b 1px solid;
+color: #ab3c3c;
+}
+}
 strong { font-weight: bold; }
 
 
 article {
-background: #f5f5f5;
+/*background: #f5f5f5;*/
 padding: 0 0.809em;
 max-width: 30em;
 margin: auto;
@@ -150,8 +165,16 @@ section.last { padding-bottom: 0; }
 #technical ul { float: left; margin: 0; padding: 0; }
 	
 #experience section { position: relative; margin-bottom: 1em; padding-bottom: 1em; }
+	#experience section:hover h2 {
+	background:#fafafa;
+	color: #ab3c3c;
+	-webkit-transition: color 0.5s ease-in;
+	-moz-transition: color 0.5s ease-in;
+	-o-transition: color 0.5s ease-in;
+	transition: color 0.5s ease-in;
+	}
 	#experience section .location { font-style: italic; margin-bottom: .4em; }
-	#experience section .date-range { font-size: 1.05em; margin-bottom: .8em; }
+	/*#experience section .date-range { font-size: 1.05em; margin-bottom: .8em; }*/
 	#experience section h3 { clear: both; }
 	#experience section p, #experience section ul { clear: both; margin: 0.75em 0; }
 	#experience section ul {padding: 0; }
