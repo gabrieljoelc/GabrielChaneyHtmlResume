@@ -165,7 +165,7 @@ section.last { padding-bottom: 0; }
 #technical ul { float: left; margin: 0; padding: 0; }
 	
 #experience section { position: relative; margin-bottom: 1em; padding-bottom: 1em; }
-	#experience section:hover h2 {
+	html.no-touch #experience section:hover h2 {
 	background:#fafafa;
 	color: #ab3c3c;
 	-webkit-transition: color 0.5s ease-in;
