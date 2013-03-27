@@ -130,6 +130,7 @@
 		header .name-and-title { margin-right: 15px; width: auto; }
 		header h1 {letter-spacing: 3px;}
 		header h2 {letter-spacing: 2px;}
+		header .contact-info {margin-top: 2px;}
 	
 	.social-icons { margin-top: 6px; padding-top: 0; }
 		.social-icons a { margin-right: 0; }
