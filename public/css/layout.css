@@ -89,7 +89,7 @@
     }
 
 	@page {
-		margin: 1cm 0;
+		margin: 0;
 	}
 	
     @page:first {
