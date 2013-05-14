@@ -1,0 +1,350 @@
+@import "base";
+
+@mixin last($elem) {
+  #{$elem}.last {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+$starHeight: 44px / 2;
+$starWidth: $starHeight;
+$starOffset: 0 -1*$starHeight;
+$numStars: 5;
+$steps: 2;
+$total: $numStars * $steps;
+ 
+@mixin filled($n: 0) {
+  width: ($starWidth / $steps) * $n;
+}
+ 
+.stars {
+  background: url(data:image/png;base64,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) repeat-x top left;
+  height: $starHeight;
+  display: inline-block;
+ 
+  &.empty {
+    background-position: $starOffset;
+    width: $numStars * $starWidth;
+    float: right;
+    /*margin-top: 4px;*/
+  }
+ 
+  @for $i from 0 through ($total) {
+    &.filled_#{$i} { @include filled($i) }
+  }
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* BABY BEAR */   
+body { font-family: Georgia, "Times New Roman", serif; /*color: #444; background: #f5f5f5;*/ }
+h1, h2, h3, h4, h5 { /*color: #333;*/ font-weight: normal; margin-top: 0; margin-bottom: 0;}
+p, ul {font-size: .857em; line-height: 1.5;}
+h2 { font-size: 1.3em; }
+
+/* anchor and hover from http://retinart.net/ */
+a {
+color: #2c2c2c;
+text-decoration: none;
+border-bottom: #d88f8f 1px solid;
+transition: color 0.3s;
+-moz-transition: color 0.3s;
+-ms-transition: color 0.3s;
+-o-transition: color 0.3s;
+-webkit-transition: color 0.3s;
+}
+a:hover {
+border-bottom: #cac49b 1px solid;
+color: #ab3c3c;
+}
+strong { font-weight: bold; }
+
+
+article {
+/*background: #f5f5f5;*/
+padding: 0 0.809em;
+max-width: 60em;
+margin: auto;
+border: solid #666;
+border-width: 8px 0 2px 0;
+min-width: 10em;
+}
+
+header { margin: 1.8em 0 1em 0; border-bottom: 1px solid #ccc; padding-bottom: 1.8em; }
+	header h1, header h2 { font-weight: normal; }
+	header h1 { font-size: 3em; letter-spacing: 4px; line-height: 1.1; text-transform: uppercase; }
+	header h2 { font-size: 1.25em; font-style: italic; text-transform: uppercase; letter-spacing: 2.98px; }
+	header li { list-style: none; }
+	header .name-and-title { float: left; }
+	header .contact-info { margin: 0; padding: 0; width: 17em; }
+
+/*footer {
+border-top: 1px solid #ccc;
+margin-bottom: 2em;
+padding: 1em 0 5em 0;
+text-align: center;
+
+}*/
+
+
+footer p { margin-bottom: 0; text-align: center; }
+
+article > section { margin-bottom: 1em; padding-bottom: 1em; }
+	article > section > h2:first-child { font-style: italic; font-weight: bold; }
+	article > section > .section-content { margin-top: 0; margin-bottom: 0; }
+
+section { border-bottom: 1px solid #ccc; }
+/*section.last { padding-bottom: 0; }*/
+@include last(section);
+
+#profile h3 { font-size: 1.3em; font-weight: normal; }
+
+	#skills {
+    section {
+      border: none;
+      float: left;
+      width: 15em;
+
+      h2 { margin-bottom: .3em; }
+      h2 + p { margin: 0; padding-right: 3em; }
+    }
+    section.last h2 + p { padding-right: 0; }
+    dl { margin:0; }
+    dt, dd {
+      float: none;
+    }
+    dt {
+      font-style: italic;
+      font-size: 1.1em;
+      width: auto;
+    }
+    dd {
+      margin-left: 0;
+      margin-bottom: 10px;
+      width: auto;
+    }
+    @include last(dd);
+  }
+
+#technical {
+  /*ul {
+    float: left;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style-image: url(../images/sprite.png.scaled500_50pct2.png); 
+    list-style-position: inside;
+    border-bottom: 1px dashed #ccc;
+    height: $starHeight;
+  }
+  li strong {
+    float: right;
+  }*/
+  dl {
+    width: 45%;
+    margin: 0;
+  }
+  dt, dd {
+    border-bottom: 1px dashed #ccc;
+    display: block;
+    float: left;
+    padding-bottom: 5px;
+  }
+  dt {
+    width: 15em;
+    clear: both;
+    margin-bottom: 5px;
+  }
+  dd {
+    margin: 0;
+    .text {display: none;}
+  }
+
+  @include last('');
+}
+
+	
+#experience section { position: relative; margin-bottom: 1em; padding-bottom: 1em; }
+	html.no-touch #experience section:hover h2 {
+	background:#fafafa;
+	color: #ab3c3c;
+	-webkit-transition: color 0.5s ease-in;
+	-moz-transition: color 0.5s ease-in;
+	-o-transition: color 0.5s ease-in;
+	transition: color 0.5s ease-in;
+	}
+	#experience section .location { font-style: italic; margin-bottom: .4em; }
+	/*#experience section .date-range { font-size: 1.05em; margin-bottom: .8em; }*/
+	#experience section h3 { clear: both; }
+	#experience section p, #experience section ul { clear: both; margin: 0.75em 0; }
+	#experience section ul {padding: 0; }
+		#experience section ul li { margin-left: 1.5em;}
+	@include last('#experience section');
+		#experience section.last p { margin-bottom: 0; }
+
+#education.last { margin-bottom: 50px; }
+		
+/** sticky footer (http://www.cssreset.com/how-to-keep-footer-at-bottom-of-page-with-css/) *
+body {
+height: 100%;
+}
+
+article {
+position: relative;
+min-height: 100%;
+}
+article > section.last {
+padding-bottom: 80px;
+}
+footer {
+height: 50px;
+bottom: 0;
+position: absolute;
+padding:0;
+margin:0;
+width: 100%;
+}*/
+
+.social-icons { padding-top: 6px; }
+	.social-icons a { margin-right: 3px; }
+
+.social-icon {
+background-repeat: no-repeat;
+/* Data URI converter: http://websemantics.co.uk/online_tools/image_to_data_uri_convertor/ */
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAABkCAYAAADnszKOAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAScQAAEnEB89x6jgAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTAw9HKhAAADlUlEQVRoQ+2avU7rQBCFeVreggQaWiSalNBBl0dIR0tLBTU0VHRA7ozDOLPHJ+vZeG1zJY70CXw8f4nXGwdxst1uZ4Wah7i7u9uenp5m0RjMy0FNZLlc0mY5NAfrMKhprFYrWrwErYF1PdRUWLEhYH2DmqxADbCP0jFYYk2wX3JQ45r3gWsiGYAljIHv2f5yzK12LP4WbQdggcZisdCERuz8MYj2A/TtcF9fX5rQ6PX1lcaUYjtm76tXzhZnGtyInT8WUWyAsQgP4MU81Pv7+/bq6iqpwRCNM4CpbwhRnQF8o8vLyx93906YzxDVGcDH9p3ziP4G2A3QtxF55bzIOSPZiBQWZHjlvMg5Q9T0bQfIfRh55bzIOYV+GCkseAx8z2SA2R9IFJZUE+yXHBgssQbYR+kYBiswBKxvUNOosSbwmiPURI55XvS3Wg5qHqJvx1Rsh4tCzSmh5pRQc0qoOSXUPMRsi3C223DWjYgVGwLWN6jJCtQA+ygdgyXWBPslB0Ov+fn5ee+XEVwTyQAsgbHZbCR8r8fHx6axieV4RN0BoreaNsup7x1Q/C3aDsACGab1et3xdDgfm0O0HyCywyn6JdQU8XPYjln06nWRmbx/c3Pz48YHUERlAygme7v9q/eXJYKofABtwhRZfIiofAAFVfrKDdGwAfr+BNOHaNgALy8vzcJkMRFE5QP4FY8qfUdEZQP4FX9IJUOIdgNENyKvknOMZCNSWBDiVXKOIWr6tgNEPox00ZlsASros1wP/TBSWDDiP3ZR0c1I1PZMBog+kLA7QT0Wi2QfSBSWVBPslxwYLLEG2EfpGAYrMASsb1DTGPqQquA1R6iJRJ8XPf5Wy0HNQ0R2TNvholBzSqg5JdScEmpOCTUPMdsinO02nHUjYsWGgPUNarICNcA+SsdgiTXBfslBjWveB66JZACWMAa+Z/tL5FYzsXMl+Fu0HYAFelAspgTRfoDIDodiMSXYjhl69QqKxZQi+o8HMH1/fzf/5uP/1ef29pbWQETDB1DhAB8fH7QGIqrzDqg+Pz+bn6rr62taAxH9LcJfMkBkI3p+ftaEjvTa6zqwtfD29kbzkWQjUlgQUiKW7xE1fdsBos99UbFc4+LiQkPSARQWzHh4eJBwrqenJ5rjEbU9kwFmfyBRWFJNsF9yYLDEGmAfpWMYrMAQsL5BTaPGmsBrjlATme2rGXJ/f0+beUb5cjoe25N/mnDETcY90J8AAAAASUVORK5CYII=);
+padding: 0 18px 16px 16px;
+}
+.linkedin {
+}
+.github {
+background-position-y: -34px;
+}
+.twitter {
+background-position-y: -68px;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.lt {float: left;}
+.rt {float: right;}
+
+@include last('');
+	
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min-resolution: 144dpi) {
+    /* Style adjustments for high resolution devices */
+}
