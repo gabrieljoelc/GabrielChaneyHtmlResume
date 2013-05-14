@@ -1,6 +1,6 @@
 @import "base";
 
-@mixin last($elem) {
+@mixin last($elem: '') {
   #{$elem}.last {
     border-bottom: none;
     margin-bottom: 0;
@@ -146,12 +146,10 @@ section { border-bottom: 1px solid #ccc; }
     float: right;
   }*/
   dl {
-    width: 45%;
     margin: 0;
   }
   dt, dd {
     border-bottom: 1px dashed #ccc;
-    display: block;
     float: left;
     padding-bottom: 5px;
   }
@@ -165,7 +163,7 @@ section { border-bottom: 1px solid #ccc; }
     .text {display: none;}
   }
 
-  @include last('');
+  @include last();
 }
 
 	
@@ -232,10 +230,7 @@ background-position-y: -68px;
    Helper classes
    ========================================================================== */
 
-.lt {float: left;}
-.rt {float: right;}
-
-@include last('');
+@include last();
 	
 /*
  * Image replacement

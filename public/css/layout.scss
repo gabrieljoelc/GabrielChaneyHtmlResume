@@ -27,6 +27,18 @@ $daddyBearSectionH2Width: 7em;
 			width: $daddyBearSectionContentWidth - $daddyBearSkillsDtWidth - $daddyBearSectionH2Width;
 		}
 	}
+	#technical {
+		dl {
+		    width: 45%;
+		    margin: 0;
+		    &.lt {
+		    	float: left;
+		    }
+		    &.rt {
+		    	float: right;
+		    }
+		}
+	}
 
 
 /* 9. CUSTOM LAYOUT & TYPOGRAPHY (Mummy bear)
@@ -49,6 +61,17 @@ $daddyBearSectionH2Width: 7em;
 			margin-left: 0;
 			margin-bottom: 10px;
 			width: auto;
+		}
+	}
+	#technical {
+		dl {
+			float: none;
+			dt {
+				border: none;
+			}
+		    &.lt, &.rt {
+		    	float: none;
+		    }
 		}
 	}
 }

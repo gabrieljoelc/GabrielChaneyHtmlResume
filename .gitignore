@@ -108,6 +108,4 @@ Backup*/
 UpgradeLog*.XML
 
 .sass-cache
-base.css
-main.css
-layout.css
+/tmp
