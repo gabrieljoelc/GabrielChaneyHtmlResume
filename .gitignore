@@ -109,3 +109,5 @@ UpgradeLog*.XML
 
 .sass-cache
 /tmp
+
+Thumbs.db
